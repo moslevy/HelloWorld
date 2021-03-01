@@ -13,7 +13,7 @@ public class QuickSort {
         Scanner input = new Scanner(System.in);  // Create a Scanner object
 
         QuickSort qs = new QuickSort();
-        showMessage("Enter numbers with spaces to be able to sort below: ");
+        showMessage("Enter numbers with spaces to be able to sort them below: ");
         qs.numbersToSort = receiveParseAndReturnArrayToQS(input);
 
         qs.quickSort(qs.numbersToSort);
@@ -81,7 +81,5 @@ public class QuickSort {
     public String toString() {
         return "Quick Sort result: " + Arrays.toString(numbersToSort);
     }
-
-
 }
 
