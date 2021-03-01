@@ -22,8 +22,12 @@ public class QuickSort {
         System.out.println(qs);
     }
 
+    //Receive the input from user's keyboard, parse and return and int[] to sort.
+
     private static int[] receiveParseAndReturnArrayToQS(Scanner input) {
+        //String inserted by user.
         String stringOfNumbers = input.nextLine();
+        //
         String[] numbersToParse = stringOfNumbers.split("\\s+");
         int[] myNumbersToSort = new int[numbersToParse.length];
         for (int i = 0; i < numbersToParse.length; i++) {
@@ -32,7 +36,7 @@ public class QuickSort {
 
         return myNumbersToSort;
     }
-
+    //Simple show message method.
     private static void showMessage(String msg) {
         System.out.println(msg);
     }
@@ -48,18 +52,19 @@ public class QuickSort {
             quickSort(arrayToQuickSort, p + 1, high);
         }
     }
-
+    //Swaps number positions.
     private void swap(int[] array, int index1, int index2) {
         int temp = array[index1];
         array[index1] = array[index2];
         array[index2] = temp;
     }
-
+    // Returns random pivot index between low and high inclusive.
     private int getPivot(int low, int high) {
         Random random = new Random();
         return random.nextInt((high - low) + 1) + low;
     }
-
+    //moves all n < pivot to the left of pivot and all n > pivot
+    // to the right of pivot, then returns pivot index.
     private int partition(int[] A, int low, int high) {
         swap(A, low, getPivot(low, high));
         int border = low + 1;
